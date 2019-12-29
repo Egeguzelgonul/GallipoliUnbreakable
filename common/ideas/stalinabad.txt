@@ -1,0 +1,408 @@
+ideas = {
+	# MILITARY
+
+
+	political_advisor = {
+
+		STA_pot = {
+
+			picture = generic_political_advisor_europe_2
+
+			allowed = {
+				original_tag = STA
+			}
+			
+			traits = { prince_of_terror }
+		}
+
+		STA_coi = {
+
+			picture = generic_political_advisor_europe_1
+				
+			allowed = {
+				original_tag = STA
+			}
+			
+			traits = { captain_of_industry }
+		}
+
+		STA_stc = {
+
+			picture = generic_political_advisor_europe_3
+			
+			allowed = {
+				original_tag = STA
+			}
+			
+			traits = { smooth_talking_charmer }
+		}
+	}
+
+	army_chief = {
+
+		STA_aco2 = {
+
+			picture = generic_army_europe_4
+			
+			allowed = {
+				original_tag = STA
+			}		
+			
+			traits = { army_chief_organizational_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		STA_acd2 = {
+
+			picture = generic_army_europe_1
+			
+			allowed = {
+				original_tag = STA
+			}
+			
+			traits = { army_chief_defensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	air_chief = {
+
+		STA_acr = {
+
+			picture = generic_air_europe_3
+			
+			allowed = {
+				original_tag = STA
+			}
+			
+			traits = { air_chief_reform_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		STA_acgs = {
+
+			picture = generic_air_europe_3
+			
+			allowed = {
+				original_tag = STA
+			}
+			
+			traits = { air_chief_ground_support_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}
+
+	navy_chief = {
+
+		STA_nccr = {
+
+			picture = generic_navy_europe_2
+			
+			allowed = {
+				original_tag = STA
+			}
+					
+			traits = { navy_chief_commerce_raiding_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		STA_ncm = {
+
+			picture = generic_navy_europe_3
+			
+			allowed = {
+				original_tag = STA
+			}
+					
+			traits = { navy_chief_maneuver_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	high_command = {
+
+		ivan_konev = {
+			#Also unit leader: 408
+			
+			allowed = {
+				original_tag = SOV
+			}
+			available = 
+			{
+				custom_trigger_tooltip = {
+				tooltip = SOV_konev_civil_war
+					NOT = { 
+						any_other_country = {
+							has_war_with = STA
+							original_tag = STA
+							has_unit_leader = 408
+						}
+					}
+				}
+			}
+			
+
+			
+			traits = { army_concealment_2 }
+			# Almost certainly a psychopath
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		STA_ar = {
+			
+			picture = generic_army_europe_5
+			
+			allowed = {
+				original_tag = STA
+			}
+			
+			traits = { army_regrouping_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		STA_ai2 = {
+
+			picture = generic_army_europe_3
+			
+			allowed = {
+				original_tag = STA
+			}
+			
+			traits = { army_infantry_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		STA_aa2 = {
+
+			picture = generic_army_europe_2
+			
+			allowed = {
+				original_tag = STA
+			}
+			
+			traits = { army_armored_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		STA_acas = {
+
+			picture = generic_air_europe_2
+			
+			allowed = {
+				original_tag = STA
+			}
+			
+			traits = { air_close_air_support_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		STA_ncs = {
+
+			picture = generic_navy_europe_2
+			
+			allowed = {
+				original_tag = STA
+			}
+			
+			traits = { navy_capital_ship_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}	
+
+	theorist = {
+		STA_mt = {
+			
+			picture = generic_army_europe_6
+
+			allowed = {
+				original_tag = STA
+			}
+			
+			research_bonus = {
+				land_doctrine = 0.10
+			}
+			
+			traits = { military_theorist }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		STA_nt = {
+
+			picture = generic_navy_europe_3
+			
+			allowed = {
+				original_tag = STA
+			}
+			
+			research_bonus = {
+				naval_doctrine = 0.10
+			}
+			
+			traits = { naval_theorist }
+		}	
+
+		STA_awt = {
+
+			picture = generic_air_europe_2
+			
+			allowed = {
+				original_tag = STA
+			}
+			
+			research_bonus = {
+				air_doctrine = 0.10
+			}
+			
+			traits = { air_warfare_theorist }
+		}
+
+	}
+
+	country = {
+	
+		stalins_sanity_1 = {
+	
+				name = stalins_sanity_1
+	
+				picture = stalins_sanity_1
+	
+				allowed = { original_tag = STA }
+	
+				removal_cost = -1
+	
+				modifier = {
+					research_speed_factor = 0.10
+					stability_factor = 0.2
+					war_support_factor = -0.3
+					army_attack_factor = -0.2
+				}
+			}
+	
+		stalins_sanity_2 = {
+	
+				name = stalins_sanity_2
+	
+				picture = stalins_sanity_2
+	
+				allowed = { original_tag = STA }
+	
+				removal_cost = -1
+	
+				modifier = {
+					research_speed_factor = 0.05
+					stability_factor = 0.10
+					war_support_factor = -0.15
+					army_attack_factor = -0.1
+				}
+			}
+	
+		stalins_sanity_3 = {
+	
+				name = stalins_sanity_3
+	
+				picture = stalins_sanity_3
+	
+				allowed = { original_tag = STA }
+	
+				removal_cost = -1
+	
+				modifier = {
+					research_speed_factor = -0.05
+					stability_factor = -0.10
+					war_support_factor = 0.15
+					army_attack_factor = 0.1
+				}
+			}
+	
+		stalins_sanity_4 = {
+	
+				name = stalins_sanity_4
+	
+				picture = stalins_sanity_4
+	
+				allowed = { original_tag = STA }
+	
+				removal_cost = -1
+	
+				modifier = {
+					research_speed_factor = -0.1
+					stability_factor = -0.20
+					war_support_factor = 0.3
+					army_attack_factor = 0.2
+				}
+			}
+
+		russian_leadership = {
+	
+				name = russian_leadership
+	
+				picture = home_of_revolution
+	
+				allowed = { original_tag = STA }
+	
+				removal_cost = -1
+	
+				modifier = {
+					research_speed_factor = 0.04
+					command_power_gain = 0.2
+					stability_factor = -0.10
+				}
+			}
+
+		russian_engineering = {
+	
+				name = russian_engineering
+	
+				picture = home_of_revolution
+	
+				allowed = { original_tag = STA }
+	
+				removal_cost = -1
+	
+				modifier = {
+					command_power_gain = 0.6
+					research_speed_factor = 0.08
+				}
+			}
+
+}

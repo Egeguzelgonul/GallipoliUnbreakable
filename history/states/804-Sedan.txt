@@ -1,0 +1,25 @@
+state={
+	id=804
+	name="STATE_804"
+
+	history={
+		owner = ALS
+		victory_points = {
+			3560 1 
+		}
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 1
+
+		}
+		add_core_of = ALS
+
+	}
+
+	provinces={
+		3560 5291 
+	}
+	manpower=390800
+	buildings_max_level_factor=1.000
+	state_category=city
+}

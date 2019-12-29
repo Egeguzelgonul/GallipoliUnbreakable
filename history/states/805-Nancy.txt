@@ -1,0 +1,25 @@
+state={
+	id=805
+	name="STATE_805"
+	resources={
+		steel=15.000
+	}
+
+	history={
+		owner = ALS
+		buildings = {
+			infrastructure = 7
+			industrial_complex = 1
+
+		}
+		add_core_of = ALS
+
+	}
+
+	provinces={
+		521 11516 
+	}
+	manpower=317500
+	buildings_max_level_factor=1.000
+	state_category=city
+}

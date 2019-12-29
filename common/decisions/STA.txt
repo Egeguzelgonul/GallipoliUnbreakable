@@ -1,0 +1,199 @@
+stalins_sanity = {
+	decrease_stalins_sanity_1 = {
+
+		allowed = {
+			original_tag = STA
+		}
+
+		available = {
+			has_idea = stalins_sanity_1
+		}
+
+		cost = 75
+
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		visible = {
+			has_idea = stalins_sanity_1
+		}
+
+		complete_effect = {
+			if = {
+				limit = { STA = { has_idea = stalins_sanity_1 } }
+				swap_ideas = {
+				remove_idea = stalins_sanity_1
+				add_idea = stalins_sanity_2
+			}
+			}
+		}
+	}
+
+	decrease_stalins_sanity_2 = {
+
+		allowed = {
+			original_tag = STA
+		}
+
+		available = {
+			has_idea = stalins_sanity_2
+		}
+
+		cost = 75
+
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		visible = {
+			has_idea = stalins_sanity_2
+		}
+
+		complete_effect = {
+			if = {
+				limit = { STA = { has_idea = stalins_sanity_2 } }
+				swap_ideas = {
+				remove_idea = stalins_sanity_2
+				add_idea = stalins_sanity_3
+			}
+			}
+		}
+	}
+
+	decrease_stalins_sanity_3 = {
+
+		allowed = {
+			original_tag = STA
+		}
+
+		available = {
+			has_idea = stalins_sanity_3
+		}
+
+		cost = 75
+
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		visible = {
+			has_idea = stalins_sanity_3
+		}
+
+		complete_effect = {
+			if = {
+				limit = { STA = { has_idea = stalins_sanity_3 } }
+				swap_ideas = {
+				remove_idea = stalins_sanity_3
+				add_idea = stalins_sanity_4
+			}
+			}
+		}
+	}
+
+	increase_stalins_sanity_1 = {
+
+		allowed = {
+			original_tag = STA
+		}
+
+		available = {
+			has_idea = stalins_sanity_4
+		}
+
+		cost = 75
+
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		visible = {
+			has_idea = stalins_sanity_4
+		}
+
+		complete_effect = {
+			if = {
+				limit = { STA = { has_idea = stalins_sanity_4 } }
+				swap_ideas = {
+				remove_idea = stalins_sanity_4
+				add_idea = stalins_sanity_3
+			}
+			}
+		}
+	}
+
+	increase_stalins_sanity_2 = {
+
+		allowed = {
+			original_tag = STA
+		}
+
+		available = {
+			has_idea = stalins_sanity_3
+		}
+
+		cost = 75
+
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		visible = {
+			has_idea = stalins_sanity_3
+		}
+
+		complete_effect = {
+			if = {
+				limit = { STA = { has_idea = stalins_sanity_3 } }
+				swap_ideas = {
+				remove_idea = stalins_sanity_3
+				add_idea = stalins_sanity_2
+			}
+			}
+		}
+	}
+
+	increase_stalins_sanity_3 = {
+
+		allowed = {
+			original_tag = STA
+		}
+
+		available = {
+			has_idea = stalins_sanity_2
+		}
+
+		cost = 75
+
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		visible = {
+			has_idea = stalins_sanity_2
+		}
+
+		complete_effect = {
+			if = {
+				limit = { STA = { has_idea = stalins_sanity_2 } }
+				swap_ideas = {
+				remove_idea = stalins_sanity_2
+				add_idea = stalins_sanity_1
+			}
+			}
+		}
+	}
+}

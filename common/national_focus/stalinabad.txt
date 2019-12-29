@@ -1,0 +1,1937 @@
+focus_tree = {
+	id = stalinabad
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = STA
+		}
+	}
+	default = no
+	focus = {
+		id = STA_stalins_big_plan
+		icon = GFX_focus_ger_great_red_menace
+		cost = 3.00
+		x = 7
+		y = 0
+			available_if_capitulated = yes
+			completion_reward = {
+					add_political_power = 150
+					STA = {
+							country_event = {
+									id = stalinabad.1
+									days = 0
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_industrial_1
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 3.00
+		prerequisite = {
+			focus = STA_stalins_big_plan
+		}
+		x = 1
+		y = 1
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 30
+				}
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = construction_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = industrial_complex
+											size < 1
+											include_locked = yes
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_industrial_2
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 3.00
+		prerequisite = {
+			focus = STA_stalins_big_plan
+		}
+		x = 3
+		y = 1
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 30
+				}
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = infrastructure_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = infrastructure
+											size < 1
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 0
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 1
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 1
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_industrial_3
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 3.00
+		prerequisite = {
+			focus = STA_stalins_big_plan
+		}
+		x = 5
+		y = 1
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 30
+				}
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = production_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = arms_factory
+											size < 1
+											include_locked = yes
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_invade_UZB
+		icon = GFX_goal_generic_attack_allies
+		cost = 5.00
+		prerequisite = {
+			focus = STA_industrial_2
+		}
+		prerequisite = {
+			focus = STA_industrial_1
+		}
+		prerequisite = {
+			focus = STA_industrial_3
+		}
+		x = 3
+		y = 2
+			available = {
+					OR = {
+							NOT = {
+									UZB = {
+											is_in_faction_with = STA
+										}
+								}
+						}
+				}
+			bypass = {
+					UZB = {
+							OR = {
+									exists = no
+									is_in_faction_with = STA
+									has_war_with = ROOT
+								}
+						}
+				}
+			will_lead_to_war_with = UZB
+			ai_will_do = {
+					factor = 30
+					modifier = {
+							factor = 0.2
+							any_home_area_neighbor_country = {
+									has_war_with = ROOT
+									surrender_progress < 0.5
+								}
+						}
+				}
+			completion_reward = {
+					if = {
+							limit = {
+									country_exists = UZB
+									NOT = {
+											UZB = {
+													is_in_faction_with = STA
+												}
+										}
+									NOT = {
+											has_war_with = UZB
+										}
+								}
+							UZB = {
+									every_owned_state = {
+											add_claim_by = STA
+										}
+								}
+							create_wargoal = {
+									type = take_state_focus
+									target = UZB
+									generator = { 405 }
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_integrate_UZB
+		icon = GFX_goal_generic_national_unity
+		cost = 3.00
+		prerequisite = {
+			focus = STA_invade_UZB
+		}
+		x = 1
+		y = 3
+			ai_will_do = {
+					factor = 30
+				}
+			available = {
+					UZB = {
+							exists = no
+						}
+					405 = {
+							owner = {
+									tag = STA
+								}
+						}
+					584 = {
+							owner = {
+									tag = STA
+								}
+						}
+					585 = {
+							owner = {
+									tag = STA
+								}
+						}
+				}
+			bypass = {
+
+}
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+			completion_reward = {
+					405 = {
+							add_core_of = STA
+						}
+					584 = {
+							add_core_of = STA
+						}
+					585 = {
+							add_core_of = STA
+						}
+					add_war_support = -0.1
+				}
+
+	}
+	focus = {
+		id = STA_develop_UZB
+		icon = GFX_goal_generic_construction
+		cost = 3.00
+		prerequisite = {
+			focus = STA_invade_UZB
+		}
+		x = 3
+		y = 3
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 30
+				}
+			available = {
+					UZB = {
+							exists = no
+						}
+				}
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = construction_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = industrial_complex
+											size < 1
+											include_locked = yes
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_triumph_UZB
+		icon = GFX_goal_generic_propaganda
+		cost = 3.00
+		prerequisite = {
+			focus = STA_invade_UZB
+		}
+		x = 5
+		y = 3
+			ai_will_do = {
+					factor = 30
+				}
+			available = {
+					UZB = {
+							exists = no
+						}
+				}
+			bypass = {
+
+}
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+			complete_tooltip = {
+
+}
+			completion_reward = {
+					STA = {
+							country_event = {
+									id = stalinabad.3
+									days = 1
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_invade_PER
+		icon = GFX_goal_generic_attack_allies
+		cost = 5.00
+		prerequisite = {
+			focus = STA_develop_UZB
+		}
+		prerequisite = {
+			focus = STA_integrate_UZB
+		}
+		prerequisite = {
+			focus = STA_triumph_UZB
+		}
+		x = 3
+		y = 4
+			available = {
+					OR = {
+							NOT = {
+									PER = {
+											is_in_faction_with = STA
+										}
+								}
+						}
+				}
+			bypass = {
+					PER = {
+							OR = {
+									exists = no
+									is_in_faction_with = STA
+									has_war_with = ROOT
+								}
+						}
+				}
+			will_lead_to_war_with = PER
+			ai_will_do = {
+					factor = 30
+					modifier = {
+							factor = 0.2
+							any_home_area_neighbor_country = {
+									has_war_with = ROOT
+									surrender_progress < 0.5
+								}
+						}
+				}
+			completion_reward = {
+					if = {
+							limit = {
+									country_exists = PER
+									NOT = {
+											PER = {
+													is_in_faction_with = STA
+												}
+										}
+									NOT = {
+											has_war_with = PER
+										}
+								}
+							PER = {
+									every_owned_state = {
+											add_claim_by = STA
+										}
+								}
+							create_wargoal = {
+									type = take_state_focus
+									target = PER
+									generator = { 405 }
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_proclaim_persia
+		icon = GFX_focus_hol_united_netherlands
+		cost = 10.00
+		prerequisite = {
+			focus = STA_invade_PER
+		}
+		x = 3
+		y = 5
+			ai_will_do = {
+					factor = 100
+				}
+			available = {
+					PER = {
+							exists = no
+						}
+				}
+			bypass = {
+
+}
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+			completion_reward = {
+					country_event = {
+							id = stalinabad.2
+							days = 1
+						}
+					add_named_threat = {
+							threat = 3
+							name = stalinabad.2.t
+						}
+					add_ideas = limited_conscription
+					419 = {
+							add_core_of = STA
+						}
+					420 = {
+							add_core_of = STA
+						}
+					421 = {
+							add_core_of = STA
+						}
+					413 = {
+							add_core_of = STA
+						}
+					417 = {
+							add_core_of = STA
+						}
+					266 = {
+							add_core_of = STA
+						}
+					411 = {
+							add_core_of = STA
+						}
+					412 = {
+							add_core_of = STA
+						}
+					418 = {
+							add_core_of = STA
+						}
+					416 = {
+							add_core_of = STA
+						}
+					414 = {
+							add_core_of = STA
+						}
+					410 = {
+							add_core_of = STA
+						}
+					AFG = {
+							every_owned_state = {
+									add_claim_by = STA
+								}
+						}
+					add_war_support = -0.1
+					add_stability = -0.1
+					STA = {
+							set_cosmetic_tag = STA_empire
+						}
+				}
+
+	}
+	focus = {
+		id = STA_forced_industrialization
+		icon = GFX_goal_generic_soviet_construction
+		cost = 10.00
+		prerequisite = {
+			focus = STA_stalins_big_plan
+		}
+		x = 10
+		y = 1
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 50
+				}
+			available = {
+					PER = {
+							exists = no
+						}
+				}
+			completion_reward = {
+					add_tech_bonus = {
+							name = industrial_bonus
+							bonus = 1.0
+							uses = 1
+							category = industry
+						}
+				}
+			ai_will_do = {
+					factor = 3
+				}
+
+	}
+	focus = {
+		id = STA_stabilise
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 10.00
+		prerequisite = {
+			focus = STA_forced_industrialization
+		}
+		x = 8
+		y = 2
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 3
+				}
+			completion_reward = {
+					add_stability = 0.05
+					add_political_power = -50
+				}
+
+	}
+	focus = {
+		id = STA_infrastructure_1
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		prerequisite = {
+			focus = STA_stabilise
+		}
+		x = 8
+		y = 3
+			available_if_capitulated = yes
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = infrastructure_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = infrastructure
+											size < 1
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					add_stability = 0.05
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 0
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 1
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 1
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_infrastructure_2
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		prerequisite = {
+			focus = STA_infrastructure_1
+		}
+		x = 8
+		y = 4
+			available_if_capitulated = yes
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = infrastructure_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = infrastructure
+											size < 1
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					add_stability = 0.05
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 0
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 1
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 1
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_infrastructure_3
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		prerequisite = {
+			focus = STA_infrastructure_2
+		}
+		x = 8
+		y = 5
+			available_if_capitulated = yes
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = infrastructure_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = infrastructure
+											size < 1
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					add_stability = 0.05
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 0
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = infrastructure
+											size > 1
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 1
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_economic_plan
+		icon = GFX_goal_generic_production
+		cost = 10.00
+		prerequisite = {
+			focus = STA_forced_industrialization
+		}
+		x = 10
+		y = 2
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 50
+				}
+			completion_reward = {
+					add_tech_bonus = {
+							name = industrial_bonus
+							bonus = 1.0
+							uses = 1
+							category = industry
+						}
+				}
+			ai_will_do = {
+					factor = 3
+				}
+
+	}
+	focus = {
+		id = STA_construction_1
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		prerequisite = {
+			focus = STA_economic_plan
+		}
+		x = 10
+		y = 3
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 50
+				}
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = construction_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = industrial_complex
+											size < 1
+											include_locked = yes
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					add_stability = -0.1
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_construction_2
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10.00
+		prerequisite = {
+			focus = STA_construction_1
+		}
+		x = 10
+		y = 4
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 50
+				}
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = construction_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = industrial_complex
+											size < 1
+											include_locked = yes
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					add_stability = -0.1
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_stalins_grand_palace
+		icon = GFX_focus_generic_industry_3
+		cost = 10.00
+		prerequisite = {
+			focus = STA_construction_2
+		}
+		x = 10
+		y = 5
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 50
+				}
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = construction_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = industrial_complex
+											size < 2
+											include_locked = yes
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					add_stability = -0.05
+					add_war_support = -0.1
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = industrial_complex
+											size > 1
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = industrial_complex
+																			size > 1
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_russian_engineers
+		icon = GFX_focus_generic_socialist_science
+		cost = 10.00
+		prerequisite = {
+			focus = STA_forced_industrialization
+		}
+		x = 12
+		y = 2
+			completion_reward = {
+					swap_ideas = {
+							remove_idea = russian_leadership
+							add_idea = russian_engineering
+						}
+				}
+			ai_will_do = {
+					factor = 5
+				}
+
+	}
+	focus = {
+		id = STA_research_slot_1
+		icon = GFX_focus_research
+		cost = 10.00
+		prerequisite = {
+			focus = STA_russian_engineers
+		}
+		x = 12
+		y = 3
+			available_if_capitulated = yes
+			completion_reward = {
+					add_research_slot = 1
+				}
+
+	}
+	focus = {
+		id = STA_research_slot_2
+		icon = GFX_focus_research
+		cost = 10.00
+		prerequisite = {
+			focus = STA_research_slot_1
+		}
+		x = 12
+		y = 4
+			available_if_capitulated = yes
+			completion_reward = {
+					add_research_slot = 1
+				}
+
+	}
+	focus = {
+		id = STA_research_slot_3
+		icon = GFX_focus_research
+		cost = 10.00
+		prerequisite = {
+			focus = STA_research_slot_2
+		}
+		x = 12
+		y = 5
+			available = {
+					num_of_factories > 50
+				}
+			cancel_if_invalid = no
+			continue_if_invalid = yes
+			available_if_capitulated = yes
+			completion_reward = {
+					add_research_slot = 1
+				}
+
+	}
+	focus = {
+		id = STA_interior
+		icon = GFX_focus_generic_soviet_politics
+		cost = 5.00
+		prerequisite = {
+			focus = STA_stalins_big_plan
+		}
+		x = 17
+		y = 1
+			available = {
+					PER = {
+							exists = no
+						}
+				}
+			completion_reward = {
+					if = {
+							limit = {
+									has_idea = neutrality_idea
+								}
+							remove_ideas = neutrality_idea
+						}
+					add_political_power = 50
+				}
+
+	}
+	focus = {
+		id = STA_socialist_education
+		icon = GFX_focus_generic_military_academy
+		cost = 5.00
+		prerequisite = {
+			focus = STA_interior
+		}
+		x = 15
+		y = 2
+			available_if_capitulated = yes
+			completion_reward = {
+					if = {
+							limit = {
+									has_idea = neutrality_idea
+								}
+							remove_ideas = neutrality_idea
+						}
+					add_political_power = 200
+				}
+
+	}
+	focus = {
+		id = STA_deportations
+		icon = GFX_focus_eng_crush_the_dream
+		cost = 5.00
+		prerequisite = {
+			focus = STA_socialist_education
+		}
+		x = 15
+		y = 3
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 4
+				}
+			completion_reward = {
+					add_stability = 0.2
+					add_manpower = -120000
+				}
+
+	}
+	focus = {
+		id = STA_purge
+		icon = GFX_goal_generic_war_with_comintern
+		cost = 5.00
+		prerequisite = {
+			focus = STA_interior
+		}
+		x = 17
+		y = 2
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 4
+				}
+			completion_reward = {
+					add_stability = -0.1
+					add_war_support = -0.1
+					add_political_power = 100
+				}
+
+	}
+	focus = {
+		id = STA_socialism_with_iranian_characteristics
+		icon = GFX_focus_prc_agrarian_socialism
+		cost = 5.00
+		prerequisite = {
+			focus = STA_purge
+		}
+		x = 17
+		y = 3
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+			completion_reward = {
+					add_ideas = PRC_peoples_war
+				}
+
+	}
+	focus = {
+		id = STA_collectivization
+		icon = GFX_focus_cze_german_puppet
+		cost = 5.00
+		prerequisite = {
+			focus = STA_interior
+		}
+		x = 19
+		y = 2
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 50
+				}
+			bypass = {
+					custom_trigger_tooltip = {
+							tooltip = construction_effort_tt
+							all_owned_state = {
+									free_building_slots = {
+											building = arms_factory
+											size < 1
+											include_locked = yes
+										}
+								}
+						}
+				}
+			complete_tooltip = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+							type = arms_factory
+							level = 4
+							instant_build = yes
+						}
+				}
+			completion_reward = {
+					add_political_power = -150
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 4
+							add_building_construction = {
+									type = arms_factory
+									level = 4
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_redistribution
+		icon = GFX_focus_generic_support_the_left_right
+		cost = 5.00
+		prerequisite = {
+			focus = STA_collectivization
+		}
+		x = 19
+		y = 3
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 3
+				}
+			completion_reward = {
+					add_stability = 0.07
+					add_war_support = 0.07
+				}
+
+	}
+	focus = {
+		id = STA_starve_together
+		icon = GFX_focus_generic_join_comintern
+		cost = 5.00
+		prerequisite = {
+			focus = STA_socialism_with_iranian_characteristics
+			focus = STA_redistribution
+			focus = STA_deportations
+		}
+		x = 17
+		y = 4
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+			completion_reward = {
+					add_stability = 0.15
+					add_war_support = 0.15
+				}
+
+	}
+	focus = {
+		id = STA_quest_to_free_the_workers_of_the_world
+		icon = GFX_focus_ger_great_red_menace
+		cost = 10.00
+		prerequisite = {
+			focus = STA_stalins_big_plan
+		}
+		x = 23
+		y = 1
+			available = {
+					PER = {
+							exists = no
+						}
+				}
+			available_if_capitulated = no
+			completion_reward = {
+					add_political_power = 25
+					STA = {
+							country_event = {
+									id = stalinabad.4
+									days = 1
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_take_AFG
+		icon = GFX_goal_generic_major_war
+		cost = 10.00
+		prerequisite = {
+			focus = STA_quest_to_free_the_workers_of_the_world
+		}
+		x = 22
+		y = 2
+			available = {
+					OR = {
+							NOT = {
+									AFG = {
+											is_in_faction_with = STA
+										}
+								}
+						}
+				}
+			bypass = {
+					AFG = {
+							OR = {
+									exists = no
+									is_in_faction_with = STA
+									has_war_with = ROOT
+								}
+						}
+				}
+			will_lead_to_war_with = AFG
+			ai_will_do = {
+					factor = 30
+					modifier = {
+							factor = 0.2
+							any_home_area_neighbor_country = {
+									has_war_with = ROOT
+									surrender_progress < 0.5
+								}
+						}
+				}
+			completion_reward = {
+					if = {
+							limit = {
+									country_exists = AFG
+									NOT = {
+											AFG = {
+													is_in_faction_with = STA
+												}
+										}
+									NOT = {
+											has_war_with = AFG
+										}
+								}
+							create_wargoal = {
+									type = take_state_focus
+									target = AFG
+									generator = { 267 }
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_flip_the_british_persia
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		cost = 10.00
+		prerequisite = {
+			focus = STA_take_AFG
+		}
+		x = 22
+		y = 3
+			available_if_capitulated = no
+			completion_reward = {
+					every_state = {
+							limit = {
+									is_owned_by = ENG
+									is_core_of = PER
+								}
+							STA = {
+									transfer_state = PREV
+								}
+						}
+					ENG = {
+							country_event = {
+									id = stalinabad.8
+									days = 1
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_ultimatum_to_caucasus
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 10.00
+		prerequisite = {
+			focus = STA_quest_to_free_the_workers_of_the_world
+		}
+		x = 24
+		y = 2
+			available_if_capitulated = no
+			completion_reward = {
+					AZR = {
+							country_event = {
+									id = stalinabad.5
+									days = 1
+								}
+						}
+					GEO = {
+							country_event = {
+									id = stalinabad.5
+									days = 1
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_split_ARM
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 10.00
+		prerequisite = {
+			focus = STA_ultimatum_to_caucasus
+		}
+		x = 24
+		y = 3
+			available_if_capitulated = no
+			completion_reward = {
+					add_political_power = 25
+					ARM = {
+							country_event = {
+									id = stalinabad.6
+									days = 1
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_consolidate_greater_PER
+		icon = GFX_focus_hol_united_netherlands
+		cost = 10.00
+		prerequisite = {
+			focus = STA_flip_the_british_persia
+		}
+		prerequisite = {
+			focus = STA_split_ARM
+		}
+		x = 23
+		y = 4
+			available_if_capitulated = no
+			ai_will_do = {
+					factor = 3
+				}
+			completion_reward = {
+					add_stability = 0.15
+				}
+
+	}
+	focus = {
+		id = STA_strike_at_the_source_of_imperialism
+		icon = GFX_focus_attack_britain
+		cost = 10.00
+		prerequisite = {
+			focus = STA_consolidate_greater_PER
+		}
+		x = 21
+		y = 5
+			available = {
+					OR = {
+							NOT = {
+									ENG = {
+											is_in_faction_with = STA
+										}
+								}
+						}
+				}
+			bypass = {
+					ENG = {
+							OR = {
+									exists = no
+									is_in_faction_with = STA
+									has_war_with = ROOT
+								}
+						}
+				}
+			will_lead_to_war_with = ENG
+			ai_will_do = {
+					factor = 30
+					modifier = {
+							factor = 0.2
+							any_home_area_neighbor_country = {
+									has_war_with = ROOT
+									surrender_progress < 0.5
+								}
+						}
+				}
+			completion_reward = {
+					if = {
+							limit = {
+									country_exists = ENG
+									NOT = {
+											ENG = {
+													is_in_faction_with = STA
+												}
+										}
+									NOT = {
+											has_war_with = ENG
+										}
+								}
+							create_wargoal = {
+									type = take_state_focus
+									target = ENG
+									generator = { 405 }
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_the_giant_of_the_Central_Asia
+		icon = GFX_goal_generic_cavalry
+		cost = 10.00
+		prerequisite = {
+			focus = STA_consolidate_greater_PER
+		}
+		x = 25
+		y = 5
+			available = {
+					OR = {
+							NOT = {
+									KAZ = {
+											is_in_faction_with = STA
+										}
+								}
+						}
+				}
+			bypass = {
+					KAZ = {
+							OR = {
+									exists = no
+									is_in_faction_with = STA
+									has_war_with = ROOT
+								}
+						}
+				}
+			will_lead_to_war_with = KAZ
+			ai_will_do = {
+					factor = 30
+					modifier = {
+							factor = 0.2
+							any_home_area_neighbor_country = {
+									has_war_with = ROOT
+									surrender_progress < 0.5
+								}
+						}
+				}
+			completion_reward = {
+					if = {
+							limit = {
+									country_exists = KAZ
+									NOT = {
+											KAZ = {
+													is_in_faction_with = STA
+												}
+										}
+									NOT = {
+											has_war_with = KAZ
+										}
+								}
+							create_wargoal = {
+									type = take_state_focus
+									target = KAZ
+									generator = { 405 }
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_army_effort
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 10.00
+		prerequisite = {
+			focus = STA_stalins_big_plan
+		}
+		x = 28
+		y = 1
+			available_if_capitulated = yes
+			completion_reward = {
+					army_experience = 5
+					add_tech_bonus = {
+							name = land_doc_bonus
+							bonus = 1.0
+							uses = 1
+							category = land_doctrine
+						}
+				}
+
+	}
+	focus = {
+		id = STA_equipment_1
+		icon = GFX_goal_generic_small_arms
+		cost = 10.00
+		prerequisite = {
+			focus = STA_army_effort
+		}
+		x = 27
+		y = 2
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = infantry_artillery_bonus
+							bonus = 1.0
+							uses = 1
+							category = infantry_weapons
+							category = artillery
+						}
+				}
+
+	}
+	focus = {
+		id = STA_Baghdad_bomba
+		icon = GFX_focus_wonderweapons
+		cost = 10.00
+		prerequisite = {
+			focus = STA_stalins_grand_palace
+			focus = STA_research_slot_3
+			focus = STA_infrastructure_3
+		}
+		x = 10
+		y = 6
+			ai_will_do = {
+					factor = 50
+				}
+			bypass = {
+
+}
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+			completion_reward = {
+					add_tech_bonus = {
+							name = RAJ_the_smiling_buddha
+							bonus = 3.0
+							uses = 3
+							category = nuclear
+						}
+				}
+
+	}
+	focus = {
+		id = STA_overthrow_Trotsky
+		icon = GFX_focus_attack_soviet
+		cost = 10.00
+		prerequisite = {
+			focus = STA_the_giant_of_the_Central_Asia
+		}
+		x = 25
+		y = 6
+			available = {
+					OR = {
+							NOT = {
+									SOV = {
+											is_in_faction_with = STA
+										}
+								}
+						}
+				}
+			bypass = {
+					SOV = {
+							OR = {
+									exists = no
+									is_in_faction_with = STA
+									has_war_with = ROOT
+								}
+						}
+				}
+			will_lead_to_war_with = SOV
+			ai_will_do = {
+					factor = 30
+					modifier = {
+							factor = 0.2
+							any_home_area_neighbor_country = {
+									has_war_with = ROOT
+									surrender_progress < 0.5
+								}
+						}
+				}
+			completion_reward = {
+					if = {
+							limit = {
+									country_exists = SOV
+									NOT = {
+											SOV = {
+													is_in_faction_with = STA
+												}
+										}
+									NOT = {
+											has_war_with = SOV
+										}
+								}
+							create_wargoal = {
+									type = take_state_focus
+									target = SOV
+									generator = { 405 }
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = STA_peoples_army
+		icon = GFX_focus_yug_pan_slavic_congress
+		cost = 10.00
+		prerequisite = {
+			focus = STA_army_effort
+		}
+		x = 29
+		y = 2
+			available_if_capitulated = yes
+			completion_reward = {
+					if = {
+							limit = {
+									has_idea = neutrality_idea
+								}
+							remove_ideas = neutrality_idea
+						}
+					add_ideas = militarism_focus
+					army_experience = 20
+					set_rule = {
+							can_send_volunteers = yes
+						}
+				}
+
+	}
+}

@@ -1,0 +1,21 @@
+state={
+	id=802
+	name="STATE_802"
+	history={
+		owner = DES
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 1
+		}
+		add_core_of = USA
+		add_core_of = DES
+
+	}
+	provinces={
+		7721 10305 10625 
+	}
+	manpower=353785
+	buildings_max_level_factor=1.000
+	state_category=town
+}
+

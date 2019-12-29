@@ -1,0 +1,20 @@
+state={
+	id=788
+	name="STATE_788"
+        
+        history={
+		add_core_of = KAZ
+		owner = KAZ
+		buildings = {
+			infrastructure = 2
+
+		}
+}
+
+	provinces={
+		7541 10348 12233 12454 12474 13207
+	}
+	manpower=100372
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

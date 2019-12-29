@@ -1,0 +1,32 @@
+state={
+	id=792
+	name="STATE_792"
+
+	history={
+		victory_points = {
+			3914 3 
+		}
+		victory_points = {
+			10203 1 
+		}
+		owner = ALB
+		buildings = {
+			infrastructure = 4
+			9805 = {
+				naval_base = 1
+
+			}
+
+		}
+		add_core_of = GRE
+		add_core_of = ALB
+
+	}
+
+	provinces={
+		841 3914 9805 10203 
+	}
+	manpower=86090
+	buildings_max_level_factor=1.000
+	state_category=town
+}

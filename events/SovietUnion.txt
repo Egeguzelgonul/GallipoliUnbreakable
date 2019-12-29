@@ -1,0 +1,815 @@
+﻿###########################
+# Soviet Events
+###########################
+
+add_namespace = soviet
+
+# Border Skirmish with the Japanese
+country_event = {
+	id = soviet.1
+	title = soviet.1.t
+	desc = soviet.1.d
+	picture = GFX_report_event_japanese_transport_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { # Push back
+		name = soviet.1.a
+		ai_chance = { factor = 75 }
+		add_political_power = -25
+		hidden_effect = {
+			random_list = {
+				60 = {
+					JAP = {
+						country_event = { days = 1 id = japan.3 }
+					}
+				}
+				40 = {
+					JAP = {
+						country_event = { days = 1 id = japan.4 }
+					}
+				}
+			}
+		}
+		effect_tooltip = {
+			random_list = {
+				60 = {
+					country_event = soviet.2
+				}
+				40 = {
+					country_event = soviet.3
+				}
+			}
+		}
+	}
+	option = { # Yield
+		name = soviet.1.b
+		ai_chance = { factor = 25 }
+		JAP = {
+			effect_tooltip = {
+				add_stability = 0.05
+			}
+			country_event = { days = 1 id = japan.5 }
+		}
+	}
+}
+
+# Successful Raid
+country_event = {
+	id = soviet.2
+	title = soviet.2.t
+	desc = soviet.2.d
+	picture = GFX_report_event_dead_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.2.a
+		if = {
+			limit = {
+				561 = { 
+					is_owned_by = SOV 
+					any_neighbor_state = { 
+						OR = {
+							is_owned_by = JAP							
+							is_owned_by = MAN								
+						}
+					} 
+				}
+			}
+			561 = { add_manpower = -30000 }
+		}		
+		if = {
+			limit = { 
+				NOT = { 
+					561 = { 
+						is_owned_by = SOV 
+						any_neighbor_state = { 
+							OR = {
+								is_owned_by = JAP
+								is_owned_by = MAN
+							} 	
+						}
+					}
+				}
+			}
+			random_owned_state = {
+				limit = { 
+					any_neighbor_state = { 
+						OR = {
+							is_owned_by = JAP
+							is_owned_by = MAN
+						}
+					} 
+				} 
+				add_manpower = -30000
+			}
+		}
+
+		army_experience = 10
+	}
+}
+
+# Failed Raid
+country_event = {
+	id = soviet.3
+	title = soviet.3.t
+	desc = soviet.3.d
+	picture = GFX_report_event_dead_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		if = {
+			limit = {
+				561 = { 
+					is_owned_by = SOV 
+					any_neighbor_state = { 
+						OR = {
+							is_owned_by = JAP
+							is_owned_by = MAN							
+						} 
+					} 
+				}
+			}
+			561 = { add_manpower = -20000 }
+		}		
+		if = {
+			limit = { 
+				NOT = { 
+					561 = { 
+						is_owned_by = SOV 
+						any_neighbor_state = { 
+							OR = {
+								is_owned_by = JAP
+								is_owned_by = MAN
+							}
+						}
+					}
+				}
+			}
+			random_owned_state = {
+				limit = { 
+					any_neighbor_state = { 
+						OR = {
+							is_owned_by = JAP
+							is_owned_by = MAN
+						}
+					} 
+				}
+				add_manpower = -20000
+			}
+		}
+
+		add_political_power = -25
+		army_experience = 5
+		name = soviet.3.a
+	}
+}
+
+# Tannu Tuva is asked to join the USSR
+country_event = {
+	id = soviet.14
+	title = soviet.14.t
+	desc = soviet.14.d
+	picture = GFX_report_event_stalin_01
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = soviet.14.a
+		ai_chance = { factor = 100 }
+		SOV = {
+			country_event = { id = soviet.16 }
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+	option = { # Refuse
+		name = soviet.14.b
+		SOV = {
+			country_event = { id = soviet.15 }
+		}
+	}
+}
+
+# Tannu Tuva declines the offer
+country_event = {
+	id = soviet.15
+	title = soviet.15.t
+	desc = soviet.15.d
+	picture = GFX_report_event_stalin_02
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.15.a
+	}
+}
+
+# Tannu Tuva accepts the offer
+country_event = {
+	id = soviet.16
+	title = soviet.16.t
+	desc = soviet.16.d
+	picture = GFX_report_event_stalin_propaganda
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.16.a
+		annex_country = { target = TAN }
+		hidden_effect = {
+			SOV = {
+				country_event = { days = 1 id = news.14 }
+			}
+		}
+	}
+}
+
+# Improving the Stalin Line
+country_event = {
+	id = soviet.17
+	title = soviet.17.t
+	desc = soviet.17.d
+	picture = GFX_report_event_bunker_01
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.17.a
+
+		209 = {
+			add_building_construction = {
+				type = bunker
+				province = 11202
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 6324
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 11392
+				level = 5
+			}
+		}
+		210 = {
+			add_building_construction = {
+				type = bunker
+				province = 6242
+				level = 5
+			}
+		}
+		207 = {
+			add_building_construction = {
+				type = bunker
+				province = 6249
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 9241
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 3331
+				level = 5
+			}
+		}
+		206 = {
+			add_building_construction = {
+				type = bunker
+				province = 9289
+				level = 5
+			}
+		}
+		202 = {
+			add_building_construction = {
+				type = bunker
+				province = 9568
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 3543
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 504
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 6497
+				level = 5
+			}
+		}
+		203 = {		
+			add_building_construction = {
+				type = bunker
+				province = 9451
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 11409
+				level = 5
+			}
+		}
+		192 = {
+			add_building_construction = {
+				type = bunker
+				province = 3757
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 9714
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 741
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 11670
+				level = 5
+			}
+		}
+	}
+}
+
+# Xi'an Incident
+country_event = {
+	id = soviet.18
+	title = soviet.18.t
+	desc = soviet.18.d
+	picture = GFX_report_event_china_politicians_captured
+	
+	trigger = {
+		date > 1936.11.1
+		tag = CHI
+		has_opinion_modifier = hostile_status
+		NOT = { has_dlc = "Waking the Tiger" }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 50
+	}
+	
+	# Enter negotiations with Communist China
+	option = {
+		name = soviet.18.a
+		PRC = { country_event = { id = soviet.19 days = 1 } }
+	}
+
+	# Refuse to negotiate
+	option = {
+		name = soviet.18.b
+		#SOV = { country_event = { id = soviet.20 days = 1 } }
+		ai_chance = { factor = 0 }
+		set_global_flag = CHI_no_national_front_flag
+		custom_effect_tooltip = CHI_no_united_front
+	}
+}
+
+# Xi'an Incident - Communist China
+country_event = {
+	id = soviet.19
+	title = soviet.19.t
+	desc = soviet.19.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	
+	is_triggered_only = yes
+	
+	# Agree to a truce
+	option = {
+		name = soviet.19.a
+		remove_opinion_modifier = { target = CHI modifier = hostile_status }
+		CHI = {
+			remove_opinion_modifier = { target = PRC modifier = hostile_status }
+			country_event = { id = soviet.21 days = 1 }
+		}
+		hidden_effect = {
+			605 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			620 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			607 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			622 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+		}
+		#SOV = { country_event = { id = soviet.21 days = 1 } }
+	}
+
+	# Refuse to negotiate
+	option = {
+		name = soviet.19.b
+		SOV = { country_event = { id = soviet.22 days = 1 } }
+		set_global_flag = CHI_no_national_front_flag
+		ai_chance = { factor = 0 }
+		custom_effect_tooltip = CHI_no_united_front
+	}
+}
+
+# Xi'an Incident - Kuomintang Refuses
+country_event = {
+	id = soviet.20
+	title = soviet.20.t
+	desc = soviet.20.d
+	picture = GFX_report_event_nationalist_china_machinegun_firing
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.20.a
+	}
+}
+
+# Xi'an Incident - Truce
+country_event = {
+	id = soviet.21
+	title = soviet.21.t
+	desc = soviet.21.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.21.a
+		effect_tooltip = {
+			PRC = { remove_opinion_modifier = { target = CHI modifier = hostile_status } }
+			CHI = { remove_opinion_modifier = { target = PRC modifier = hostile_status } }
+		}
+	}
+}
+
+# Xi'an Incident - Communists Refuse
+country_event = {
+	id = soviet.22
+	title = soviet.22.t
+	desc = soviet.22.d
+	picture = GFX_report_event_chinese_officers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.22.a
+	}
+}
+
+
+# France national focus -  requests to join commitern
+country_event = {
+	id = soviet.29
+	title = soviet.29.t
+	desc = soviet.29.d
+	picture = GFX_report_event_stalin_01
+
+	is_triggered_only = yes
+		
+	option = {
+		name = soviet.29.a
+		SOV = { add_to_faction = FRA }
+		FRA = {
+			add_ai_strategy = {
+				type = alliance
+				id = "SOV"
+				value = 200
+			}
+		}
+		hidden_effect = {
+			news_event = { hours = 6 id = news.180 }
+		}
+	}
+	option = {
+		name = soviet.29.b
+		ai_chance = { factor = 0 }
+		FRA = {
+			add_opinion_modifier = {
+				target = SOV
+				modifier = SOV_FRA_join_comintern_reject
+			}
+		}
+	}
+}
+
+# Communist government in FROM baltic country and they wish to be annexed
+country_event = {
+	id = soviet.35
+	title = soviet.35.t
+	desc = soviet.35.d
+	picture = GFX_report_event_soviet_in_riga
+
+	is_triggered_only = yes
+
+	option = {
+		name = soviet.35.a
+		ai_chance = { factor = 100 }
+
+		effect_tooltip = {
+			if = {
+				limit = { FROM = { tag = LIT } }
+			 	SOV = {
+			 		annex_country = {
+					target = LIT
+					transfer_troops = yes } 
+					add_named_threat = { threat = 2 name = soviet.35_threat_LIT }
+				}
+			}
+			if = {
+				limit = { FROM = { tag = FIN } } 
+			 	SOV = { 
+			 		annex_country = {
+					target = FIN
+					transfer_troops = yes } 
+					add_named_threat = { threat = 5 name = soviet.35_threat_FIN }
+				}
+			}
+			if = {
+				limit = { FROM = { tag = EST } } 
+			 	SOV = { 
+			 		annex_country = {
+					target = EST
+					transfer_troops = yes } 
+					add_named_threat = { threat = 2 name = soviet.35_threat_EST }
+				}
+			}
+			if = {
+				limit = { FROM = { tag = LAT } } 
+			 	SOV = {
+			 		annex_country = {
+					target = LAT
+					transfer_troops = yes } 
+					add_named_threat = { threat = 2 name = soviet.35_threat_LAT }
+				}
+			}
+		} 
+
+		hidden_effect = {
+
+			 FROM = {
+			 	country_event = { id = baltic.6 hours = 6}
+			 }			
+		}
+	}
+	option = {
+		name = soviet.35.b
+		ai_chance = { factor = 0 }
+	}
+}
+
+# Communist government in FROM baltic country and they wish to be part puppet
+country_event = {
+	id = soviet.36
+	title = soviet.36.t
+	desc = soviet.36.d
+	picture = GFX_report_event_soviet_in_riga
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			FROM = {
+				save_event_target_as = baltic
+			}
+		}
+	}
+
+	option = {
+		name = soviet.36.a
+		if = {
+			limit = {
+				FROM = { is_puppet = no }
+			}
+			SOV = { puppet = FROM }
+		}
+		ai_chance = { factor = 100 }
+			if = {
+				limit = { FROM = { tag = LIT } }
+				add_named_threat = { threat = 1 name = soviet.36_threat_LIT }
+			}	
+			if = {
+				limit = { FROM = { tag = FIN } }
+				add_named_threat = { threat = 2 name = soviet.36_threat_FIN }
+			}			
+			if = {
+				limit = { FROM = { tag = EST } }
+				add_named_threat = { threat = 1 name = soviet.36_threat_EST }
+			}			
+			if = {
+				limit = { FROM = { tag = LAT } }
+				add_named_threat = { threat = 1 name = soviet.36_threat_LAT }
+			}		
+
+		#trigger news event
+		hidden_effect = {
+			news_event =  { id = news.70 days = 1}
+		}		
+	}
+	option = {
+		name = soviet.36.b
+		ai_chance = { factor = 0 }
+	}
+}
+
+country_event = {
+	id = soviet.65
+	title = soviet.65.t
+	desc = soviet.65.d
+	picture = GFX_report_event_soviet_purge_officers_01
+
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.65.a
+		add_political_power= 100
+	}
+}
+
+#Soviets send offer to japanese
+country_event = {
+	id = soviet.66
+	title = soviet.66.t
+	desc = soviet.66.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.66.a
+		ai_chance = { factor = 1 }
+		hidden_effect = { MAN = { country_event = { id = soviet.67 } } }
+	}
+
+	option = {
+		name = soviet.66.b
+		ai_chance = { factor = 0 }
+		hidden_effect = { SOV = { create_wargoal={ type= annex_everything target= MAN} } }
+	}
+}
+
+#Manchu ultimatum
+country_event = {
+	id = soviet.67
+	title = soviet.67.t
+	desc = soviet.67.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.67.a
+		ai_chance = { factor = 4 }
+		every_state = { 
+    	limit = { is_owned_by = MAN  is_core_of = SOV }
+    	SOV = { transfer_state = PREV }
+}
+		JAP = {	puppet = MAN }
+	}
+
+	option = {
+		name = soviet.67.b
+		ai_chance = { factor = 1 }
+		add_political_power= 100
+		JAP = { create_wargoal={ type= annex_everything target= MAN} }
+		SOV = { create_wargoal={ type= annex_everything target= MAN} }
+	}
+}
+
+#Mongol Ultimatum
+country_event = {
+	id = soviet.68
+	title = soviet.68.t
+	desc = soviet.68.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.68.a
+		ai_chance = { factor = 4 }
+		every_state = { 
+    	limit = { is_owned_by = MON  is_core_of = SOV }
+    	SOV = { transfer_state = PREV }
+}
+		SOV = {	puppet = MON }
+	}
+
+	option = {
+		name = soviet.68.b
+		ai_chance = { factor = 1 }
+		add_political_power= 100
+		SOV = { create_wargoal={ type= annex_everything target= MON} }
+	}
+}
+
+#Remove Manchu cores form Russian territory
+country_event = {
+	id = soviet.69
+	is_triggered_only = no
+
+	hidden = yes
+
+	trigger = {
+		OR = {
+			MAN = { is_subject = yes }
+			NOT = { country_exists = MAN }
+		}
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.69.a
+		every_state = { 
+    	limit = { is_core_of = SOV }
+    	PREV = { remove_core_of = MAN }
+		}
+	}
+}
+
+#Return territory to PRC
+country_event = {
+	id = soviet.70
+	title = soviet.70.t
+	desc = soviet.70.d
+	is_triggered_only = no
+
+	trigger = {
+		tag = SOV
+		PRC = { has_government = communism }
+		SOV = { any_owned_state = { is_core_of = PRC } }
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = {
+		name = soviet.70.a
+		ai_chance = { factor = 4 }
+		every_state = { 
+    	limit = { is_owned_by = SOV  is_core_of = PRC }
+    	PRC = { transfer_state = PREV }
+		}
+	}
+
+	option = {
+		name = soviet.70.b
+		ai_chance = { factor = 0 }
+		add_political_power = -200
+	}
+}
+
+#Remove Manchu cores if they do not exist
+country_event = {
+	id = soviet.71
+	is_triggered_only = no
+
+	hidden = yes
+
+	trigger = {
+		NOT = { country_exists = MAN }
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.71.a
+		every_state = { 
+    	limit = { is_core_of = MAN }
+    	PREV = { remove_core_of = MAN }
+		}
+	}
+}

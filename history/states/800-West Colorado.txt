@@ -1,0 +1,26 @@
+state={
+	id=800
+	name="STATE_800"
+	resources={
+		oil=9.000
+	}
+
+	history={
+		owner = DES
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+
+		}
+		add_core_of = USA
+		add_core_of = DES
+
+	}
+
+	provinces={
+		868 1658 6887 7684 7999 9792 10535 
+	}
+	manpower=435790
+	buildings_max_level_factor=1.000
+	state_category=town
+}

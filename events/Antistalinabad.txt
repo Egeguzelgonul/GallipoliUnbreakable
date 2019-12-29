@@ -1,0 +1,106 @@
+add_namespace = antistalinabad
+
+#Controller of Central Asia
+country_event = {
+	id = antistalinabad.1
+	title = antistalinabad.1.t
+	picture = GFX_report_event_soldiers_marching
+	fire_only_once = yes
+	is_triggered_only = no
+	hidden = yes
+
+	trigger = {
+		OR = {
+			NOT = { country_exists = STA } 
+			STA = { surrender_progress > 0.80 }
+		}
+		732 = { is_owned_by = ROOT }
+	}
+
+	mean_time_to_happen = {
+		days = 0
+	}
+
+	desc = antistalinabad.1.d
+	option = {
+	name = antistalinabad.1.a
+	ai_chance = {
+	factor = 1
+	}
+    every_state = { 
+    limit = { is_owned_by = STA  is_core_of = KAZ }
+    ROOT = { transfer_state = PREV }
+}
+    every_state = { 
+    limit = { is_owned_by = STA  is_core_of = UZB }
+    ROOT = { transfer_state = PREV }
+}
+    every_state = { 
+    limit = { is_owned_by = STA  is_core_of = TAJ }
+    ROOT = { transfer_state = PREV }
+}
+}
+}
+
+news_event = {
+	id = antistalinabad.2
+	title = antistalinabad.2.t
+	desc = antistalinabad.2.d
+	picture = GFX_news_event_016
+
+	major = yes
+
+	is_triggered_only = no
+
+	fire_for_sender = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { country_exists = STA }
+	}
+
+	option = {
+		name = antistalinabad.2.a
+	}
+}
+
+country_event = {
+	id = antistalinabad.3
+	title = antistalinabad.3.t
+	picture = GFX_report_event_soldiers_marching
+	fire_only_once = yes
+	is_triggered_only = no
+
+	trigger = {
+	OR = {
+		tag = SOV
+		tag = ENG
+	}
+	OR = {
+		STA = { has_war_with = SOV }
+		STA = { has_war_with = ENG }
+	}
+	has_war = no
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	desc = antistalinabad.3.d
+	option = {
+	name = antistalinabad.3.a
+	ai_chance = {
+	factor = 4
+	}
+	ROOT = { create_wargoal = { type = annex_everything target = STA } }
+	}
+	option = {
+	name = antistalinabad.3.b
+	ai_chance = {
+	factor = 1
+	}
+	add_war_support = -0.05
+	}
+}

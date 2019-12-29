@@ -1,0 +1,27 @@
+state={
+	id=799
+	name="STATE_799"
+	resources={
+		oil=10.000
+		aluminium=18.000
+	}
+
+	history={
+		owner = DES
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+
+		}
+		add_core_of = USA
+		add_core_of = DES
+
+	}
+
+	provinces={
+		1972 5044 10645 10914 12552 
+	}
+	manpower=143316
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

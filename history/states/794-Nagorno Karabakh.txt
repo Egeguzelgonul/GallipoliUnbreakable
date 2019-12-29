@@ -1,0 +1,26 @@
+state={
+	id=794
+	name="STATE_794"
+	resources={
+		oil=7.000
+	}
+
+	history={
+		owner = ARM
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+
+		}
+		add_core_of = AZR
+		add_core_of = ARM
+
+	}
+
+	provinces={
+		1467 9715 
+	}
+	manpower=22810
+	buildings_max_level_factor=1.000
+	state_category=large_town
+}

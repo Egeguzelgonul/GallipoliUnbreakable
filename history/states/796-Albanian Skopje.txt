@@ -1,0 +1,26 @@
+state={
+	id=796
+	name="STATE_796"
+	resources={
+		chromium=14.000
+		aluminium=4.000
+	}
+
+	history={
+		owner = ALB
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+
+		}
+		add_core_of = YUG
+		add_core_of = ALB
+
+	}
+	provinces={
+		833 867 
+	}
+	manpower=374200
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

@@ -1,0 +1,49 @@
+STA_historical_plan = {
+	name = "STA historical plan"
+	desc = ""
+
+	enable = {
+		original_tag = STA
+	}
+	abort = {
+		is_subject = yes
+	}
+
+	ai_national_focuses = {
+		STA_stalins_big_plan
+		STA_industrial_1
+		STA_industrial_2
+		STA_industrial_3
+		STA_invade_UZB
+		STA_army_effort
+		STA_integrate_UZB
+		STA_develop_UZB
+		STA_triumph_UZB
+		STA_invade_PER
+		STA_peoples_army
+		STA_proclaim_persia
+	}
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+	traits = {
+		captain_of_industry = 10
+	}
+
+	
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}
